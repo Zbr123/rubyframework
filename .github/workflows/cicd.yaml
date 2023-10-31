@@ -23,6 +23,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libxslt-dev libxml2-dev build-essential
+      - name: Install Nokogiri
+        run: |
+          gem install nokogiri
       - name: Install dependencies
         run: bundle install
       - name: Run Android tests
