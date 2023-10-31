@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        ruby-version: ['3.1']
+        ruby-version: ['2.7']
 
     steps:
       - uses: actions/checkout@v4
@@ -19,6 +19,10 @@ jobs:
         uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
         with:
           ruby-version: ${{ matrix.ruby-version }}
+      - name: Install libxslt-dev and libxml2-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxslt-dev libxml2-dev
       - name: Install dependencies
         run: bundle install
       - name: Run Android tests
