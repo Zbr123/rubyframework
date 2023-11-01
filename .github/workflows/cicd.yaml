@@ -19,13 +19,11 @@ jobs:
         uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
         with:
           ruby-version: ${{ matrix.ruby-version }}
-      - name: Install libxslt-dev and libxml2-dev
+      - name: Install libraries
         run: |
           sudo apt-get update
           sudo apt-get install -y libxslt-dev libxml2-dev build-essential
-      - name: Install Nokogiri
-        run: |
-          gem install nokogiri
+          bundle config build.nokogiri --use-system-libraries
       - name: Install dependencies
         run: bundle install
       - name: Run Android tests
