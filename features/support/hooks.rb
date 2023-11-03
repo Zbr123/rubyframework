@@ -16,6 +16,8 @@ After do |scenario|
   $driver.driver_quit
 end
 
+
+
 #DB connection variables if needed
 ENV['HOST'] = "myDB.local"
 ENV['USER'] = 'user'

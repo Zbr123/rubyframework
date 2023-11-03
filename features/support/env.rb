@@ -24,7 +24,16 @@ case ENV['SERVER']
           caps = Appium.load_appium_txt\
             file: File.expand_path("../../support/caps/POCO.txt", __FILE__),\
             verbose: true
-        end
+        when "infinix"
+          caps = Appium.load_appium_txt\
+            file: File.expand_path("../../support/caps/infinix.txt", __FILE__),\
+            verbose: true
+        when "GalaxyA14"
+          caps = Appium.load_appium_txt\
+            file: File.expand_path("../../support/caps/GalaxyA14.txt", __FILE__),\
+            verbose: true
+      end
+
       p caps
 
       Appium::Driver.new(caps, true)
@@ -61,7 +70,7 @@ when 'BROWSERSTACK'
           caps['device'] = 'Samsung Galaxy A52'
           caps['platformName'] = 'android'
           caps['browserstack.debug'] = true
-          caps['app'] = 'bs://d5ccae694d9c68f495d37bbc306a0aceefe34bbe'
+          caps['app'] = 'bs://934a7781eeaf2b63a600a3c861e74b6170f740c8'
           caps['autoGrantPermissions'] = true
 
           appium_driver = Appium::Driver.new({
