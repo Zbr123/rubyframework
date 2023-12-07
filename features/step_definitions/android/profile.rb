@@ -1,6 +1,16 @@
-When("I click on preferred language tab") do
+When("I click on Profile tab") do
   profile = Profile.new
-  profile.preferred_lang_tab.click
+  profile.profile_tab.click
+end
+
+  When("I click on Perfil tab") do
+  profile = Profile.new
+  profile.perfil_tab.click
+end
+
+When("I click on Language dropdown icon") do
+  profile = Profile.new
+  profile.lang_dropdown.click
 end
 
 And("I select Spanish language") do
@@ -34,3 +44,13 @@ Then("I should see language changed to English") do
   profile = Profile.new
   profile.english_text.click
 end
+
+Then("I should see 'Profile' Heading") do
+  logout = Profile.new
+  logout.profile_heading.click
+end
+
+# Then("I should see 'Perfil' Heading") do
+#   logout = Profile.new
+#   logout.perfil_heading.click
+# end

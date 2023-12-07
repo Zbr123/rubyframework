@@ -65,12 +65,12 @@ when 'BROWSERSTACK'
       case ENV['DEVICE_NAME']
         when "SamsungGalaxyA52"
           caps = {}
-          caps['build'] = 'Ruby Appium Sample'
+          caps['build'] = 'Lineup Mobile Automation'
           caps['name'] = 'single_test'
           caps['device'] = 'Samsung Galaxy A52'
           caps['platformName'] = 'android'
           caps['browserstack.debug'] = true
-          caps['app'] = 'bs://934a7781eeaf2b63a600a3c861e74b6170f740c8'
+          caps['app'] = 'bs://fe72e08dede501ec304b9764a818ab0d31aa4461'
           caps['autoGrantPermissions'] = true
 
           appium_driver = Appium::Driver.new({

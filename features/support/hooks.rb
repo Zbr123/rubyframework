@@ -17,7 +17,6 @@ After do |scenario|
 end
 
 
-
 #DB connection variables if needed
 ENV['HOST'] = "myDB.local"
 ENV['USER'] = 'user'
